@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootprojectApplication {
+public class BootprojectStarter {
 
 	public static void main(String[] args) {
 		System.out.println("Going to start context");
-		SpringApplication.run(BootprojectApplication.class, args);
+		SpringApplication.run(BootprojectStarter.class, args);
 		System.out.println("Started Up");
 	}
 
