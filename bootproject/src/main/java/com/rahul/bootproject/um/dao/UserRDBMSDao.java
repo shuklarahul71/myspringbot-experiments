@@ -13,6 +13,6 @@ import com.rahul.bootproject.um.model.User;
  */
 
 
-public interface UserMySqlDao extends JpaRepository<User, String>{
+public interface UserRDBMSDao extends JpaRepository<User, Integer>{
 
 }

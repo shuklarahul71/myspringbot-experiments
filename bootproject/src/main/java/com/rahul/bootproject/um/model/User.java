@@ -3,11 +3,17 @@
  */
 package com.rahul.bootproject.um.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author rahul.s.shukla
@@ -15,13 +21,22 @@ import javax.persistence.Id;
  */
 
 @Entity(name="Users")
-public class User {
+public class User implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String userid;
+	@Column(name = "ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
+	@NotNull
+	private Integer userid;
 	
 	@Basic
+	@NotEmpty
 	private String username;
 	
 	@Basic
@@ -34,10 +49,10 @@ public class User {
 	private String address;
 	
 	
-	public String getUserid() {
+	public Integer getUserid() {
 		return userid;
 	}
-	public void setUserid(String userid) {
+	public void setUserid(Integer userid) {
 		this.userid = userid;
 	}
 	public String getUsername() {
@@ -65,7 +80,7 @@ public class User {
 		this.address = address;
 	}
 	
-	public User(String userid, String username, String firstName, String lastName, String address) {
+	public User(Integer userid, String username, String firstName, String lastName, String address) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -73,6 +88,11 @@ public class User {
 		this.lastName = lastName;
 		this.address = address;
 	}
+	
+	public User() {
+		super();
+	}
+	
 	
 	
 }

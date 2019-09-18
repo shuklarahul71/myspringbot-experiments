@@ -18,16 +18,16 @@ import com.rahul.bootproject.um.model.User;
 @Repository
 public class UserLocalDaoImpl implements UserLocalDao{
 
-	private static final Map<String, User> usersMap = new HashMap<String, User>();
+	private static final Map<Integer, User> usersMap = new HashMap<Integer, User>();
 	 
     static {
         initEmps();
     }
  
     private static void initEmps() {
-    	User emp1 = new User("E01","Smaith@xyz.com", "Smith", "Clerk","Indore");
-    	User emp2 = new User("E01","Smaith@xyz.com", "Smith", "Clerk","Indore");
-    	User emp3 = new User("E01","Smaith@xyz.com", "Smith", "Clerk","Indore");
+    	User emp1 = new User(1,"Smaith@xyz.com", "Smith", "Clerk","Indore");
+    	User emp2 = new User(2,"Smaith@xyz.com", "Smith", "Clerk","Indore");
+    	User emp3 = new User(3,"Smaith@xyz.com", "Smith", "Clerk","Indore");
     	
         
         usersMap.put(emp1.getUserid(), emp1);
