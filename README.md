@@ -1,2 +1,2 @@
 # myspringbot-experiments
-# This is first commit
+# This is demo project for learning spring boot and its basic functionalities
