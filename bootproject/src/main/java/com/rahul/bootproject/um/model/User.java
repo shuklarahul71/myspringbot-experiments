@@ -48,6 +48,8 @@ public class User implements Serializable {
 	@Basic
 	private String address;
 	
+	@Basic
+	private String password;
 	
 	public Integer getUserid() {
 		return userid;
@@ -80,6 +82,12 @@ public class User implements Serializable {
 		this.address = address;
 	}
 	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public User(Integer userid, String username, String firstName, String lastName, String address) {
 		super();
 		this.userid = userid;
@@ -87,6 +95,19 @@ public class User implements Serializable {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
+	}
+	
+	
+	
+	public User(@NotNull Integer userid, @NotEmpty String username, String firstName, String lastName, String address,
+			String password) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.password = password;
 	}
 	
 	public User() {
